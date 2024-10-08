@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" 
+        href="https://www.svgrepo.com/show/530646/briefcase.svg" 
+        type="image/svg">
+            <title>Форма регистрации</title>
+            <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+            <h2>Регистрация пользователя</h2>
+        <form id="registrationForm">
+        <label for="name">Имя (2-20 символов):</label>
+        <input type="text" id="name" placeholder="Ваше имя" required pattern="[A-Za-zА-Яа-яЁё\s]{2,20}">
+        <div class="error" id="nameError"></div>
+
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" placeholder="example@domain.com" required>
+        <div class="error" id="emailError"></div>
+
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" placeholder="Ваш возраст" required>
+        <div class="error" id="ageError"></div>
+
+        <fieldset>
+            <legend>Пол:</legend>
+            <label><input type="radio" name="gender" value="Мужчина" required> Мужчина</label>
+            <label><input type="radio" name="gender" value="Женщина" required> Женщина</label>
+        </fieldset>
+        <div class="error" id="genderError"></div>
+
+        <label for="profession">Профессия:</label>
+        <select id="profession" required>
+            <option value="" disabled selected>Выберите профессию</option>
+            <option value="Врач">Врач</option>
+            <option value="Программист">Программист</option>
+            <option value="Учитель">Учитель</option>
+            <option value="Дизайнер">Дизайнер</option>
+            <option value="Инженер">Инженер</option>
+            <option value="Продавец">Продавец</option>
+            <option value="Другое">Другое</option>
+        </select>
+        <div class="error" id="professionError"></div>
+
+        <label for="password">Пароль (минимум 8 символов, 1 заглавная буква, 1 строчная буква, 1 цифра):</label>
+        <input type="password" id="password" placeholder="Ваш пароль" required minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+">
+        <div class="error" id="passwordError"></div>
+
+        <label>
+            <input type="checkbox" id="consent" required> Согласие с обработкой данных
+        </label>
+        <div class="error" id="consentError"></div>
+
+        <button id="submitButton" type="submit" disabled>Отправить</button>
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
